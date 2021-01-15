@@ -57,3 +57,25 @@ function showPerson(person) {
   job.textContent = item.job;
   info.textContent = item.text;
 }
+// show next person
+nextBtn.addEventListener('click', function () {
+  currentItem++;
+  if (currentItem > reviews.length - 1) {
+    currentItem = 0;
+  }
+  showPerson(currentItem);
+});
+
+// show next person
+prevBtn.addEventListener('click', function () {
+  currentItem--;
+  if (currentItem < 0) {
+    currentItem = reviews.length - 1;
+  }
+  showPerson(currentItem);
+});
+
+// show random person
+randomBtn.addEventListener('click', function () {
+  currentItem = Math.floor(Math.random() * reviews.length);
+});
